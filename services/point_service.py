@@ -9,7 +9,7 @@ class PointService:
         return self.point_model.get_all()
 
     def create(self):
-        # Gera ID simples
+        # Gera um ID
         existing_ids = [p.id for p in self.point_model.get_all()]
         new_id = max(existing_ids) + 1 if existing_ids else 1
         
