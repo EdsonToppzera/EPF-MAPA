@@ -6,8 +6,8 @@ class UserController(BaseController):
     def __init__(self, app):
         super().__init__(app)
 
-        self.setup_routes()
-        self.user_service = UserService()
+        self.user_service = UserService() 
+        self.setup_routes() 
 
 
     # Rotas User
