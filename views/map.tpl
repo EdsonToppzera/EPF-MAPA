@@ -18,23 +18,39 @@
     <!-- Botão para ativar modo de adicionar pontos -->
     <button id="addBtn">Adicionar ponto</button>
 
+    <!-- pesquisa -->
+    <a href="/map/search" id="searchBtn" style="
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(60px); /* Desloca para o lado do outro botão */
+        z-index: 1000;
+        padding: 10px 16px;
+        font-size: 14px;
+        border-radius: 4px;
+        background-color: #FF9800; /* Cor Laranja para diferenciar */
+        color: white;
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+    ">Pesquisar</a>
+
+
     <!-- Container do mapa -->
     <div id="map"></div>
 
-    <!-- Biblioteca Leaflet para mapas -->
+    <!-- Biblioteca Leaflet para o mapa -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <script>
         // Pontos salvos vindos do servidor
         const savedPoints = JSON.parse('{{!saved_points_json}}');
 
-        // Variável para controlar se estamos no modo de adicionar pontos
+        // add pontos ou nn
         let adding = false;
 
         //mapa centrado no brasil
         const map = L.map('map').setView([-14.235, -51.9253], 6);
 
-        // Adiciona camada de tiles do OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap contributors'
