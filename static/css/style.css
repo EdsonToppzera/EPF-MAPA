@@ -35,3 +35,90 @@ body {
   box-shadow: var(--shadow);
 }
 
+
+/* mapa */
+/* Reset e estilos básicos */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#map {
+    height: 100%;
+}
+
+/* Botão principal */
+#addBtn {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+}
+
+#addBtn:hover {
+    background-color: #1976D2;
+}
+
+/* Formulário dentro do popup */
+.leaflet-popup-content form {
+    min-width: 180px;
+}
+
+.leaflet-popup-content label {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.leaflet-popup-content input,
+.leaflet-popup-content textarea {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.leaflet-popup-content textarea {
+    min-height: 50px;
+    resize: vertical;
+}
+
+/* Botões do formulário */
+.form-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.form-actions button {
+    flex: 1;
+    padding: 6px 12px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-actions button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.form-actions button[type="button"] {
+    background-color: #f44336;
+    color: white;
+}

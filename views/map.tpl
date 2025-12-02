@@ -6,30 +6,40 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mapa de Falhas</title>
+    <title>Mapa: Falha na infraestrutura</title>
+    
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <style>
-        #map { height: 500px; width: 100%; }
-        .form-actions { margin-top: 10px; }
-    </style>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <h1>Mapa de Falhas na Infraestrutura</h1>
+    <!-- Botão para ativar modo de adicionar pontos -->
     <button id="addBtn">Adicionar ponto</button>
+
+    <!-- Container do mapa -->
     <div id="map"></div>
 
+    <!-- Biblioteca Leaflet para mapas -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <script>
-        // 1. Inicializa mapa
-        const map = L.map('map').setView([-14.235, -51.9253], 4);
+        // Pontos salvos vindos do servidor
+        const savedPoints = JSON.parse('{{!saved_points_json}}');
+
+        // Variável para controlar se estamos no modo de adicionar pontos
+        let adding = false;
+
+        //mapa centrado no brasil
+        const map = L.map('map').setView([-14.235, -51.9253], 6);
+
+        // Adiciona camada de tiles do OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '© OpenStreetMap'
+            attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // 2. Pontos vindos do servidor (Bottle já gerou o JSON)
-        // esse json.parse transfroma json em objeto, basicamente pra parar de dar um erro q tava dando antes
-        const savedPoints = JSON.parse('{{!saved_points_json}}');
 
         savedPoints.forEach(p => {
             L.marker([p.lat, p.lng])
@@ -37,10 +47,10 @@
              .bindPopup(`<b>${p.name}</b><br>${p.description}`);
         });
 
-        // 3. Lógica de adicionar pontos
-        let adding = false;
+        // Botão de adicionar pontos
         const addBtn = document.getElementById('addBtn');
 
+        //alternar modo de adicionar pontos
         addBtn.addEventListener('click', () => {
             adding = !adding;
             addBtn.textContent = adding ? 'Cancelar' : 'Adicionar ponto';
@@ -52,27 +62,49 @@
 
             const { lat, lng } = e.latlng;
 
+            //cria formulário HTML
             const formHTML = `
-                <form action="/map/add" method="POST">
+                <form id="pointForm" action="/map/add" method="POST">
                     <input type="hidden" name="lat" value="${lat}">
                     <input type="hidden" name="lng" value="${lng}">
-                    
-                    <label>Nome</label><br>
-                    <input type="text" name="name" required autofocus><br>
-                    
-                    <label>Descrição</label><br>
-                    <textarea name="description"></textarea><br>
+
+                    <label>Nome</label>
+                    <input type="text" name="name" placeholder="Digite o nome" autofocus required>
+
+                    <label>Descrição</label>
+                    <textarea name="description" placeholder="Digite a descrição"></textarea>
 
                     <div class="form-actions">
                         <button type="submit">Salvar</button>
+                        <button type="button" id="cancelBtn">Cancelar</button>
                     </div>
                 </form>
             `;
 
-            L.popup()
-             .setLatLng([lat, lng])
-             .setContent(formHTML)
-             .openOn(map);
+            const popup = L.popup()
+                .setLatLng([lat, lng])
+                .setContent(formHTML)
+                .openOn(map);
+
+            // Aguarda o popup ser renderizado para adicionar eventos visuais
+            setTimeout(() => {
+                const form = document.getElementById('pointForm');
+                const cancelBtn = document.getElementById('cancelBtn');
+
+                form.addEventListener('submit', () => {
+                    adding = false;
+                    addBtn.textContent = 'Adicionar ponto';
+                    map.getContainer().style.cursor = '';
+                });
+
+                // Evento de cancelar
+                cancelBtn.addEventListener('click', () => {
+                    map.closePopup();
+                    adding = false;
+                    addBtn.textContent = 'Adicionar ponto';
+                    map.getContainer().style.cursor = '';
+                });
+            }, 0);
         });
     </script>
 </body>

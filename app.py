@@ -1,4 +1,4 @@
-from bottle import Bottle
+from bottle import Bottle, static_file
 from config import Config
 
 class App:
@@ -6,8 +6,11 @@ class App:
         self.bottle = Bottle()
         self.config = Config()
 
-
     def setup_routes(self):
+        @self.bottle.route('/static/<filename:path>')
+        def serve_static(filename):
+            return static_file(filename, root=self.config.STATIC_PATH)
+        
         from controllers import init_controllers
 
         print('🚀 Inicializa rotas!')
