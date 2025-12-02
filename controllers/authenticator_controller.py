@@ -15,7 +15,7 @@ class AuthenticatorController(BaseController):
         #Rotas user
     def setup_routes(self):
         self.app.route('/login', method=['GET', 'POST'], callback=self.login)
-        self.app.route('/register', method=['GET', 'POST'], callback=self.register)
+        self.app.route('/registro', method=['GET', 'POST'], callback=self.registro)
 
 
     #Login
@@ -31,12 +31,12 @@ class AuthenticatorController(BaseController):
         if not user:
             return ("Email ou senha inválidos")        
         
-        self.redirect('/users')
+        return self.redirect('/users')
 
     #Registro
-    def register(self):
+    def registro(self):
         if request.method == 'GET':
-            return self.render('account/register')
+            return self.render('account/registro')
 
         name = request.forms.get('name')
         email = request.forms.get('email')
@@ -44,13 +44,4 @@ class AuthenticatorController(BaseController):
 
         self.user_service.register(name, email, password)
 
-        self.redirect('/login')
-
-
-    def render(self, template, **ctx):
-            from bottle import template
-            return template(template, **ctx)
-
-    def redirect(self, path):
-            from bottle import redirect
-            return redirect(path)
+        return self.redirect('/login')

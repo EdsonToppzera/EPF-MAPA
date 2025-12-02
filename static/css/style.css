@@ -121,3 +121,401 @@ html, body {
     background-color: #f44336;
     color: white;
 }
+
+
+
+/* LOGIN & REGISTRO */
+
+
+
+  
+    /* Login - CSS */
+    .container-login {
+      display: grid;
+      grid-template-columns: 60% 40%; 
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+  }
+
+  /*  PAINEL ESQUERDO - LOGIN */
+  .painel-esquerdo {
+      background: #14122E;
+      color: white;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .content {
+      text-align: center;
+      margin-bottom: 20px;
+      max-width: 800px;
+  }
+
+  .login-title {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+  }
+
+  .login-subtitle {
+      font-size: 20px;
+      color: #b8c5d6;
+      line-height: 1.6;
+  }
+
+  .side-img {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+  }
+
+  /*  PAINEL DIREITO - login */
+  .painel-direito {
+      background: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 30px;
+      height: 100vh;
+      
+  }
+
+  /* container branco do form */
+  .form-container {
+    background: #ffffff;
+    padding: 80px 70px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+
+  }
+
+  /* header login  */
+  .header-login {
+      text-align: center;
+      margin-bottom: 50px;
+  }
+
+  .logo-notemap {
+      width: 180px;
+      max-width: 100%;
+      margin: 0 auto 20px auto;
+      display: block;
+  }
+
+  .text-login {
+      font-size: 24px;
+      margin-bottom: 0;
+      color: #333;
+      font-weight: 600;
+  }
+
+  /* formulario login */
+  .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+  }
+
+  .login-form label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+      display: block;
+  }
+
+  .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+  }
+
+  .input-wrapper input {
+      width: 100%;
+      padding: 12px 12px 12px 45px;
+      font-size: 15px;
+      border: 1px solid #dcdcdc;
+      border-radius: 8px;
+      outline: none;
+      background: #fafafa;
+      transition: all 0.2s;
+  }
+
+  .input-wrapper input:focus {
+      border-color: #1d3c6a;
+      background: #fff;
+  }
+
+  .input-icon {
+      position: absolute;
+      left: 15px;
+      color: #1d3c6a;
+      font-size: 16px;
+      pointer-events: none;
+  }
+
+  /* botão */
+  .btn-login {
+      margin-top: 12px;
+      padding: 14px;
+      font-size: 16px;
+      background: #1d3c6a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      font-weight: 600;
+  }
+
+  .btn-login:hover {
+      background: #153058;
+  }
+
+  .btn-login:active {
+      transform: scale(0.98);
+  }
+
+  .link {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      text-decoration: none;
+      color: #1d3c6a;
+      font-weight: 600;
+  }
+
+  .link:hover {
+      text-decoration: underline;
+  }
+
+  /*Tela Registro*/
+
+  .container-registro {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+  }
+
+  /*  PAINEL ESQUERDO – registro  */
+  .painel-esquerdo-reg {
+      background: #14122E;
+      color: white;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .content-reg {
+      text-align: center;
+      margin-bottom: 20px;
+      max-width: 800px;
+  }
+
+  .registro-title {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+  }
+
+  .registro-subtitle {
+      font-size: 20px;
+      color: #b8c5d6;
+      line-height: 1.6;
+  }
+
+  .side-img-reg {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+  }
+
+  /*  PAINEL DIREITO – registro  */
+  .painel-direito-reg {
+      background: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 30px;
+      height: 100vh;
+  }
+
+  /* header superior */
+  .header-registro {
+      text-align: center;
+      margin-bottom: 50px;
+  }
+
+  .text-registro {
+      font-size: 24px;
+      margin-bottom: 0;
+      color: #333;
+      font-weight: 600;
+  }
+
+  /* Formulario - registro */
+  
+
+  .form-container-reg {
+      background: #ffffff;
+      padding: 80px 70px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 420px;
+  }
+  
+    .registro-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+  }
+
+    .registro-form label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+      display: block;
+  }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+  }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 12px 12px 12px 45px;
+      font-size: 15px;
+      border: 1px solid #dcdcdc;
+      border-radius: 8px;
+      outline: none;
+      background: #fafafa;
+      transition: all 0.2s;
+  }
+
+    .input-wrapper input:focus {
+      border-color: #1d3c6a;
+      background: #fff;
+  }
+
+     .input-icon {
+      position: absolute;
+      left: 15px;
+      color: #1d3c6a;
+      font-size: 16px;
+      pointer-events: none;
+  }
+
+  /* botão */
+  
+  .painel-direito-reg .btn-login:hover {
+      background: #153058;
+  }
+
+  .painel-direito-reg .btn-login:active {
+      transform: scale(0.98);
+  }
+
+  /* link */
+  .painel-direito-reg .link {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      text-decoration: none;
+      color: #1d3c6a;
+      font-weight: 600;
+  }
+
+  .painel-direito-reg .link:hover {
+      text-decoration: underline;
+  }
+
+
+
+  /* Responsividade */
+
+  /* Responsividade LOGIN / REGISTRO */
+
+  /* até 1024px */
+
+  @media (max-width: 1024px) {
+  .container-login,
+  .container-registro {
+    grid-template-columns: 50% 50%;
+  }
+
+  .form-container,
+  .form-container-reg {
+    padding: 60px 50px;
+    max-width: 380px;
+  }
+}
+
+  /* até 768px */
+
+  @media (max-width: 768px) {
+
+  .container-login,
+  .container-registro {
+    grid-template-columns: 1fr;
+  }
+
+  .painel-esquerdo,
+  .painel-esquerdo-reg {
+    display: none; 
+  }
+
+  .painel-direito,
+  .painel-direito-reg {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .form-container,
+  .form-container-reg {
+    padding: 50px 30px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+/* até 480px */
+  @media (max-width: 480px) {
+    .text-login,
+    .text-registro {
+      font-size: 20px;
+    }
+
+    .login-title,
+    .registro-title {
+      font-size: 32px;
+    }
+
+    .form-container,
+    .form-container-reg {
+      padding: 40px 20px;
+    }
+
+    .input-wrapper input {
+      padding: 12px 12px 12px 40px;
+    }
+  }
