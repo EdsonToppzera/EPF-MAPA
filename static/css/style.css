@@ -448,3 +448,75 @@ html, body {
   .painel-direito-reg .link:hover {
       text-decoration: underline;
   }
+
+
+
+  /* Responsividade */
+
+  /* Responsividade LOGIN / REGISTRO */
+
+  /* até 1024px */
+
+  @media (max-width: 1024px) {
+  .container-login,
+  .container-registro {
+    grid-template-columns: 50% 50%;
+  }
+
+  .form-container,
+  .form-container-reg {
+    padding: 60px 50px;
+    max-width: 380px;
+  }
+}
+
+  /* até 768px */
+
+  @media (max-width: 768px) {
+
+  .container-login,
+  .container-registro {
+    grid-template-columns: 1fr;
+  }
+
+  .painel-esquerdo,
+  .painel-esquerdo-reg {
+    display: none; 
+  }
+
+  .painel-direito,
+  .painel-direito-reg {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .form-container,
+  .form-container-reg {
+    padding: 50px 30px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+/* até 480px */
+  @media (max-width: 480px) {
+    .text-login,
+    .text-registro {
+      font-size: 20px;
+    }
+
+    .login-title,
+    .registro-title {
+      font-size: 32px;
+    }
+
+    .form-container,
+    .form-container-reg {
+      padding: 40px 20px;
+    }
+
+    .input-wrapper input {
+      padding: 12px 12px 12px 40px;
+    }
+  }
