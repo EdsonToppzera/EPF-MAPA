@@ -10,30 +10,42 @@
         .search-box { display: flex; gap: 10px; margin-bottom: 20px; }
         .search-box input { flex: 1; padding: 10px; font-size: 16px; }
         .point-card { 
-            border: 1px solid #ddd; 
+            border: 1px solid white; 
             padding: 15px; 
             margin-bottom: 10px; 
             border-radius: 8px; 
-            background: #f9f9f9;
+            background: rgb(219, 224, 227);
         }
+        
         .back-btn { 
             display: inline-block; 
-            margin-bottom: 20px; 
-            text-decoration: none; 
-            color: #2196F3; 
+ 
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2196F3;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
+        .back-btn:hover {
+            background-color: #1976D2;
         }
     </style>
+
 </head>
 <body>
     <div class="container">
         <a href="/map" class="back-btn">Voltar para o Mapa</a>
         
-        <h1>Pesquisar Pontos</h1>
+        <h1 style="font-family: Arial, sans-serif;">Pesquisar Pontos</h1>
         
         <!-- Formulário de Pesquisa (envia para a mesma URL via GET) -->
         <form action="/map/search" method="GET" class="search-box">
             <input type="text" name="q" value="{{query}}" placeholder="Digite o nome do ponto..." autofocus>
-            <button type="submit" style="background: #2196F3; color: white; border: none; padding: 0 20px; cursor: pointer;">Buscar</button>
+            <button type="submit" class="back-btn">Buscar</button>
         </form>
 
         <!-- Lista de Resultados -->
@@ -43,7 +55,12 @@
             % else:
                 % for p in points:
                     <div class="point-card">
-                        <h3>{{p.name}}</h3>
+                        <!-- O link envia lat/lng para a rota do mapa -->
+                        <h3>
+                            <a href="/map?lat={{p.lat}}&lng={{p.lng}}&zoom=15" style="text-decoration: none; color: #2196F3;">
+                                {{p.name}}
+                            </a>
+                        </h3>
                         <p>{{p.description}}</p>
                         <small>Lat: {{p.lat}}, Lng: {{p.lng}}</small>
                     </div>

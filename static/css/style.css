@@ -47,12 +47,11 @@ html, body {
     height: 100%;
 }
 
-/* Botão principal */
 #addBtn {
     position: absolute;
     top: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-160%);
     z-index: 1000;
     padding: 10px 16px;
     font-size: 14px;
@@ -64,6 +63,26 @@ html, body {
 }
 
 #addBtn:hover {
+    background-color: #1976D2;
+}
+
+#searchBtn {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(+60%);
+    z-index: 1000;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#searchBtn:hover {
     background-color: #1976D2;
 }
 
