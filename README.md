@@ -6,26 +6,46 @@ Utiliza o microframework **Bottle**. Ideal para uso em disciplinas introdutória
 
 ## 💡 Objetivo
 
-Fornecer uma base simples, extensível e didática para construção de aplicações web orientadas a objetos com aplicações WEB em Python, ideal para trabalhos finais ou exercícios práticos.
+Este projeto é uma aplicação web desenvolvida com o framework Bottle em Python, focada em permitir que usuários façam anotações e as vinculem a localizações geográficas em um mapa, facilitando a organização contextual de informações.
 
 ---
 
 ## 🗂 Estrutura de Pastas
 
 ```bash
-poo-python-bottle-template/
-├── app.py # Ponto de entrada do sistema
-├── config.py # Configurações e caminhos do projeto
-├── main.py # Inicialização da aplicação
-├── requirements.txt # Dependências do projeto
-├── README.md # Este arquivo
-├── controllers/ # Controladores e rotas
-├── models/ # Definição das entidades (ex: User)
-├── services/ # Lógica de persistência (JSON)
-├── views/ # Arquivos HTML (Bottle Templating)
-├── static/ # CSS, JS e imagens
-├── data/ # Arquivos JSON de dados
-└── .vscode/ # Configurações opcionais do VS Code
+EPF-MAPA/
+├── controllers/          # Controladores (Rotas e lógica de interação com serviços)
+├── ├── __init__.py
+│   ├── authenticator_controller.py  # Gerencia login, registro, home, logout
+│   ├── base_controller.py
+│   ├── point_controller.py          # (Futura) Gerencia a visualização e criação de pontos
+│   └── user_controller.py
+├── data/                 # Armazenamento de dados (JSON)
+│   ├── points.json
+│   └── users.json
+├── models/               # Modelos de Dados (Classes de objetos)
+│   ├── point.py
+│   └── user.py
+├── services/             # Lógica de Negócio (Camada de serviço)
+│   ├── session_state.py
+│   ├── point_service.py
+│   └── user_service.py              # Gerencia autenticação e registro
+├── static/               # Arquivos Estáticos
+│   ├── css/              # style.css, helper.css
+│   ├── img/              # Imagens do projeto
+│   └── js/               # Arquivos JavaScript
+│── views/                # Templates HTML (.tpl)
+    ├── account/          # Templates relacionados à autenticação
+      ├── login.tpl     # Formulário de Login.
+      └── registro.tpl  # Formulário de Cadastro.
+    ├── helper-final.tpl  
+    ├── home.tpl          # Página de Boas-vindas (Home Page).
+    ├── layout.tpl        
+    ├── map.tpl           # Página principal para visualização e interação com o mapa.
+    ├── search_points.tpl 
+    ├── user_form.tpl     
+    ├── users.tpl
+└── main.py
 ```
 
 
