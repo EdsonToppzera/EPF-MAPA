@@ -469,6 +469,132 @@ html, body {
 
 
 
+
+
+
+  /* Landing page - home*/
+
+  .navbar{
+    background-color: #fff;
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+  }
+
+
+.navbar-brand{
+    font-size: 26px; 
+    font-weight: 700; 
+    color: #1A2A58; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+ }  
+
+
+  .login-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #b80808;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .login-button:hover {
+    background-color: #a00606;
+  }
+
+  .navbar-toggler {
+    font-size: 1.25rem;
+    border: none;
+  }
+
+  .navbar-toggler:focus{
+    box-shadow: none;
+    outline: none;
+
+  }
+
+  .nav-link{
+    color: #565454;
+    font-weight: 600;
+  }
+
+  .nav-link:hover, .nav-link:active{
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  .nav-link::before{
+    display: none;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    
+  }
+
+  .nav-link:hover::before{
+    width: 100%;
+    visibility: visible;
+  }
+
+  
+ .hero-section{
+    background: url(../img/imgsection.jpg) no-repeat center; 
+    background-size: cover;
+    width: 100%;
+    height: 100vh; 
+    
+    
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+
+
+
+  .hero-section::before{
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+    z-index: 1; 
+  }
+
+  .hero-section .container{
+    background-color: transparent; 
+
+
+    z-index: 2; 
+    position: relative; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+
+  .hero-section h1{
+    color: #fff;
+    font-size: 3.5rem;
+
+  }
+
+  .hero-section h2{
+    color: #fff;
+    font-size: 3.3rem;
+
+  }
+
+
+
+
   /* Responsividade */
 
   /* Responsividade LOGIN / REGISTRO */
@@ -538,3 +664,9 @@ html, body {
       padding: 12px 12px 12px 40px;
     }
   }
+
+
+
+
+
+

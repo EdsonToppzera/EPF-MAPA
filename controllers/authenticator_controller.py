@@ -13,6 +13,8 @@ class AuthenticatorController(BaseController):
     def setup_routes(self):
         self.app.route('/login', method=['GET', 'POST'], callback=self.login)
         self.app.route('/registro', method=['GET', 'POST'], callback=self.registro)
+        self.app.route('/home', method='GET', callback=self.home) 
+        self.app.route('/logout', callback=self.logout)
 
     # LOGIN
     def login(self):
@@ -41,4 +43,20 @@ class AuthenticatorController(BaseController):
 
         self.user_service.register_user(name, email, password) 
 
+        return redirect('/login')
+
+
+    # HOME
+
+    def home(self):
+        if session.user is None:
+            return redirect('/login')
+
+        return self.render('home', user=session.user)
+    
+
+    # LOGOUT
+    def logout(self):
+        session.user = None
+        
         return redirect('/login')
