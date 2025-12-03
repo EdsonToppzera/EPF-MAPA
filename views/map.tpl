@@ -18,21 +18,8 @@
     <!-- Botão para ativar modo de adicionar pontos -->
     <button id="addBtn">Adicionar ponto</button>
 
-    <!-- pesquisa -->
-    <a href="/map/search" id="searchBtn" style="
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(60px); /* Desloca para o lado do outro botão */
-        z-index: 1000;
-        padding: 10px 16px;
-        font-size: 14px;
-        border-radius: 4px;
-        background-color: #FF9800; /* Cor Laranja para diferenciar */
-        color: white;
-        text-decoration: none;
-        font-family: Arial, sans-serif;
-    ">Pesquisar</a>
+    <!-- botao de pesquisa -->
+    <a href="/map/search" id="searchBtn">Pesquisar pontos</a>
 
 
     <!-- Container do mapa -->
@@ -48,8 +35,16 @@
         // add pontos ou nn
         let adding = false;
 
-        //mapa centrado no brasil
-        const map = L.map('map').setView([-14.235, -51.9253], 6);
+        // Lê a URL para pegar a coordenada
+        const params = new URLSearchParams(window.location.search);
+        const lat = params.get('lat');
+        const lng = params.get('lng');
+
+        // Se nn tiver a informacao da coordenada, centraliza no brasil
+        const center = (lat && lng) ? [lat, lng] : [-14.235, -51.9253];
+        const zoom = (lat && lng) ? 15 : 6;
+
+        const map = L.map('map').setView(center, zoom);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
