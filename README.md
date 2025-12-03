@@ -6,7 +6,7 @@ Utiliza o microframework **Bottle**. Ideal para uso em disciplinas introdutória
 
 ## 💡 Objetivo
 
-Este projeto é uma aplicação em focada em permitir que usuários façam anotações e as vinculem a localizações geográficas em um mapa, facilitando a organização contextual de informações.
+Este projeto é uma aplicação focada em permitir que usuários façam anotações e as vinculem a localizações geográficas em um mapa, facilitando a organização contextual de informações.
 
 ---
 
