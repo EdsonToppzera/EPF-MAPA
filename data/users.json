@@ -180,5 +180,26 @@
         "email": "v8f@gmail.com",
         "password": "fbc312ef5ea6395b49211b2774e04d19c559fccc887e19ef7dc1ab8aa39b11e0",
         "tipo": "user_premium"
+    },
+    {
+        "id": 27,
+        "name": "pre",
+        "email": "pre@gmail.com",
+        "password": "695252f664b93b2375fc1738693a32a19e8c722fe14e81a3d80cc5b85a923da0",
+        "tipo": "user_premium"
+    },
+    {
+        "id": 28,
+        "name": "tp",
+        "email": "tp@gmail.com",
+        "password": "3abd807250d1b53741c345896f2d79faf6e7dcdb75860e98a2f84e38e874c236",
+        "tipo": "user_premium"
+    },
+    {
+        "id": 29,
+        "name": "tb",
+        "email": "tb@gmail.com",
+        "password": "7aa5ae9ecf82f6fc5208ecd0940fd71d50cd4ac596fccac2ede05af806a87b6e",
+        "tipo": "user"
     }
 ]

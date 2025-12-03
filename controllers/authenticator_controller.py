@@ -16,7 +16,7 @@ class AuthenticatorController(BaseController):
         self.app.route('/home', method='GET', callback=self.home) 
         self.app.route('/logout', callback=self.logout)
 
-    # LOGIN
+    # LOGINN
     def login(self):
         if request.method == 'GET':
             #response.delete_cookie("user_id", path='/')
@@ -30,6 +30,8 @@ class AuthenticatorController(BaseController):
         
         user = self.user_service.authenticate(email, password)
         print("DEBUG LOGIN: user autenticado =", user)
+        if user:
+            print("DEBUG LOGIN: id =", user.id, "tipo =", user.tipo)
 
         if not user:
             return self.render('account/login', error="Email ou senha inválidos!")

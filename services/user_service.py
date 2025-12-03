@@ -7,11 +7,19 @@ def hash_password(password):
 
 
 class UserService:
-    def __init__(self):
-        self.user_model = UserModel()
+    _model = UserModel()  # compartilhado por todas as instâncias
 
-    def get_all(self):
-        return self.user_model.get_all()
+    def __init__(self):
+        self.user_model = UserService._model
+
+    def get_by_id(self, user_id):
+        return self.model.get_by_id(user_id)
+    
+    # def __init__(self):
+    #     self.user_model = UserModel()
+
+    # def get_all(self):
+    #     return self.user_model.get_all()
 
     #CRIAÇÃO: Recebe os dados
     def register_user(self, name, email, password_raw, tipo='user'):
