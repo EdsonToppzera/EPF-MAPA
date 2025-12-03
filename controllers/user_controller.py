@@ -1,6 +1,7 @@
 from bottle import Bottle, request
 from .base_controller import BaseController
 from services.user_service import UserService
+from models.user import UserModel, User
 
 class UserController(BaseController):
     def __init__(self, app):
@@ -27,10 +28,12 @@ class UserController(BaseController):
         if request.method == 'GET':
             return self.render('user_form', user=None, action="/users/add")
         else:
-            # POST - salvar usuário
-            self.user_service.save()
+            name = request.forms.get('name')
+            email = request.forms.get('email')
+            password = request.forms.get('password')
+                        
+            self.user_service.register(name, email, password)
             self.redirect('/users')
-
 
     def edit_user(self, user_id):
         user = self.user_service.get_by_id(user_id)
@@ -40,9 +43,23 @@ class UserController(BaseController):
         if request.method == 'GET':
             return self.render('user_form', user=user, action=f"/users/edit/{user_id}")
         else:
-            # POST - salvar edição
-            self.user_service.edit_user(user)
+          
+            name = request.forms.get('name')
+            email = request.forms.get('email')
+            
+            
+            updated_user = User(
+                id=user.id,
+                name=name,
+                email=email,
+                password=user.password, 
+                tipo=user.tipo
+            )
+            
+            
+            self.user_service.update(updated_user) 
             self.redirect('/users')
+
 
 
     def delete_user(self, user_id):
