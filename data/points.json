@@ -4,27 +4,183 @@
         "lat": -15.771992500823854,
         "lng": -47.613182756815704,
         "name": "Buraco na rua",
-        "description": "perto da avenida top"
+        "description": "perto da avenida top",
+        "color": "blue"
     },
     {
         "id": 2,
         "lat": -11.371598464696342,
         "lng": -51.98500470759472,
         "name": "topzera",
-        "description": "randomm"
+        "description": "randomm",
+        "color": "blue"
     },
     {
         "id": 3,
         "lat": -5.9874131727851685,
         "lng": -51.54549589300862,
         "name": "top",
-        "description": "testeee"
+        "description": "testeee",
+        "color": "blue"
     },
     {
         "id": 4,
         "lat": -8.862959357191333,
         "lng": -54.35835230635957,
         "name": "testeee",
-        "description": "ok2k2ok2ok2"
+        "description": "ok2k2ok2ok2",
+        "color": "blue"
+    },
+    {
+        "id": 5,
+        "lat": -11.306976028256491,
+        "lng": -55.52305066501269,
+        "name": "ola",
+        "description": "teste",
+        "color": "blue"
+    },
+    {
+        "id": 6,
+        "lat": -12.83229105085206,
+        "lng": -53.9627943732321,
+        "name": "topzera",
+        "description": "okokkok",
+        "color": "blue"
+    },
+    {
+        "id": 7,
+        "lat": -9.795149004490453,
+        "lng": -59.588507199933986,
+        "name": "random",
+        "description": "ok",
+        "color": "blue"
+    },
+    {
+        "id": 8,
+        "lat": -6.948060160267325,
+        "lng": -62.35741273182631,
+        "name": "teste123456",
+        "description": "123456",
+        "color": "blue"
+    },
+    {
+        "id": 9,
+        "lat": -13.260341480779442,
+        "lng": -60.20381954035451,
+        "name": "dourado",
+        "description": "kd",
+        "color": "blue"
+    },
+    {
+        "id": 10,
+        "lat": -13.250555164191056,
+        "lng": -60.2122844657404,
+        "name": "ok",
+        "description": "vermei",
+        "color": "blue"
+    },
+    {
+        "id": 11,
+        "lat": -12.596559606780561,
+        "lng": -57.237137826377726,
+        "name": "teste",
+        "description": "oh nao",
+        "color": "blue"
+    },
+    {
+        "id": 12,
+        "lat": -10.34709778007942,
+        "lng": -56.962932101139664,
+        "name": "asdasd",
+        "description": "asd",
+        "color": "blue"
+    },
+    {
+        "id": 13,
+        "lat": -8.493751848983646,
+        "lng": -49.10622197205586,
+        "name": "asas",
+        "description": "asas",
+        "color": "blue"
+    },
+    {
+        "id": 14,
+        "lat": -8.450292000118118,
+        "lng": -51.83117662248959,
+        "name": "aaa",
+        "description": "aaaaa",
+        "color": "blue"
+    },
+    {
+        "id": 15,
+        "lat": -5.528561231570661,
+        "lng": -55.96255947959877,
+        "name": "okoko",
+        "description": "fodase",
+        "color": "blue"
+    },
+    {
+        "id": 16,
+        "lat": -10.271088561420074,
+        "lng": -50.57857650091924,
+        "name": "asa",
+        "description": "asas",
+        "color": "blue"
+    },
+    {
+        "id": 17,
+        "lat": -14.709952207034686,
+        "lng": -51.17191340061046,
+        "name": "testvf",
+        "description": "final",
+        "color": "gold"
+    },
+    {
+        "id": 18,
+        "lat": -9.686884450464138,
+        "lng": -46.732874373291,
+        "name": "asassasasas",
+        "description": "as",
+        "color": "red"
+    },
+    {
+        "id": 19,
+        "lat": -10.897365362291827,
+        "lng": -49.52375534591265,
+        "name": "asasasas",
+        "description": "asasasasa",
+        "color": "green"
+    },
+    {
+        "id": 20,
+        "lat": -8.97147993750541,
+        "lng": -53.215629388435765,
+        "name": "vermei",
+        "description": "ei",
+        "color": "red"
+    },
+    {
+        "id": 21,
+        "lat": -2.8113891515191054,
+        "lng": -46.7091948312275,
+        "name": "teste",
+        "description": "aiaiai",
+        "color": "blue"
+    },
+    {
+        "id": 22,
+        "lat": -7.971915784976037,
+        "lng": -55.32527169844896,
+        "name": "ok",
+        "description": "asd",
+        "color": "blue"
+    },
+    {
+        "id": 23,
+        "lat": -12.510773129969094,
+        "lng": -52.4904398443687,
+        "name": "asdas",
+        "description": "asdasd",
+        "color": "blue"
     }
 ]

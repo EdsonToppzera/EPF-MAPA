@@ -14,7 +14,7 @@ class UserService:
         return self.user_model.get_all()
 
     #CRIAÇÃO: Recebe os dados
-    def register_user(self, name, email, password_raw):
+    def register_user(self, name, email, password_raw, tipo='user'):
         last_id = max([u.id for u in self.user_model.get_all()], default=0)
         new_id = last_id + 1
         
@@ -23,7 +23,7 @@ class UserService:
             name=name,
             email=email,
             password=hash_password(password_raw),
-            tipo="user"
+            tipo=tipo
         )
         self.user_model.add_user(user)
 

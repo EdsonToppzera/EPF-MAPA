@@ -58,7 +58,24 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-login">Criar conta</button>
+                    <!-- PARTE MODIFICADA -->
+                    
+                    <!-- <button type="submit" class="btn-login">Criar conta</button> -->
+
+                    <div class="button-group" style="display: flex; gap: 10px; flex-direction: column;">
+                        <!-- Botão Normal -->
+                        <button type="submit" name="tipo_conta" value="user" class="btn-login">
+                            Criar conta Basic
+                        </button>
+
+                        <!-- Botão Premium -->
+                        <button type="submit" name="tipo_conta" value="user_premium" class="btn-login" 
+                                style="background-color: #59278e; color: #000; font-weight: bold;">
+                            Criar conta Premium
+                        </button>
+                    </div>
+
+                    <!-- // -->
 
                 </form>
 

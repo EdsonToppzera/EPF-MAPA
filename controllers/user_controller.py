@@ -32,7 +32,7 @@ class UserController(BaseController):
             email = request.forms.get('email')
             password = request.forms.get('password')
                         
-            self.user_service.register(name, email, password)
+            self.user_service.register_user(name, email, password)
             self.redirect('/users')
 
     def edit_user(self, user_id):

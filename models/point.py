@@ -2,12 +2,13 @@ import json
 import os
 
 class Point:
-    def __init__(self, id, lat, lng, name, description):
+    def __init__(self, id, lat, lng, name, description, color="blue"):
         self.id = id
         self.lat = lat
         self.lng = lng
         self.name = name
         self.description = description
+        self.color = color
 
     def to_dict(self):
         return {
@@ -15,11 +16,13 @@ class Point:
             'lat': self.lat,
             'lng': self.lng,
             'name': self.name,
-            'description': self.description
+            'description': self.description,
+            'color': self.color
         }
 
     @classmethod
     def from_dict(cls, data):
+        data['color'] = data.get('color', 'blue')
         return cls(**data)
 
 class PointModel:
